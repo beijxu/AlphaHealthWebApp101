@@ -61,17 +61,14 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-            Know yourself with latest science
+            Know yourself with latest <span className="text-color-primary">science</span> for free
             </h1>
             <div className="container-xs">
-              <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-              <span className="text-color-primary">Alpha Health</span> is designed and developed as <span className="text-color-primary">A</span>  <span className="text-color-primary">L</span>iterature-driven 
-                <span className="text-color-primary">P</span>ersonal 
-                <span className="text-color-primary">H</span>ealth 
-                <span className="text-color-primary">A</span>ssistant
-                for people with any kind of diseases. 
-                By leveraging data science, it automatically extracts personalized clinical research data from medical journals, 
-                FDA databases, and clinical trial registries based on user profile, including patient-specific (e.g. demographics, social behaviors, comorbidities), cancer-specific (e.g. histologic type, grade, stage), and therapy-specific (e.g. surgery, radiotherapy, medical therapy) characteristics.
+              <p className="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
+                By leveraging <span className="text-color-primary">data science and machine learning</span>, it automatically extracts personalized clinical research data from medical journals, 
+                FDA databases, and clinical trial registries based on your registered user profile, including patient-specific (e.g. demographics, social behaviors, comorbidities), 
+                cancer-specific (e.g. histologic type, grade, stage), 
+                and therapy-specific (e.g. surgery, radiotherapy, medical therapy) characteristics.
 
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
@@ -95,7 +92,7 @@ const Hero = ({
             >
               <Image
                 className="has-shadow"
-                src={require('./../../assets/images/research-main-page.jpg')}
+                src={require('./../../assets/images/research-profile-photo.png')}
                 alt="Hero"
                 width={896}
                 height={504} />
