@@ -5,7 +5,7 @@ import Banner from '../components/layout/partials/Banner';
 
 const LayoutDefault = ({ children }) => (
   <>
-    <Header navPosition="right" className="reveal-from-bottom" />
+    <Header navPosition="right" className="reveal-from-bottom"/>
     <main className="site-content">
       {children}
     </main>
