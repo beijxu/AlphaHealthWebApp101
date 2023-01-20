@@ -65,10 +65,7 @@ const Hero = ({
             </h1>
             <div className="container-xs">
               <p className="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                By leveraging <span className="text-color-primary">data science and machine learning</span>, it automatically extracts personalized clinical research data from medical journals, 
-                FDA databases, and clinical trial registries based on your registered user profile, including patient-specific (e.g. demographics, social behaviors, comorbidities), 
-                cancer-specific (e.g. histologic type, grade, stage), 
-                and therapy-specific (e.g. surgery, radiotherapy, medical therapy) characteristics.
+                Sign up <span className="text-color-primary">Alpha Health</span> and Get your personalized health report in minutues.
 
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
@@ -92,7 +89,7 @@ const Hero = ({
             >
               <Image
                 className="has-shadow"
-                src={require('./../../assets/images/research-profile-photo-2.png')}
+                src={require('./../../assets/images/research-profile-photo-3.png')}
                 alt="Hero"
                 width={896}
                 height={504} />
