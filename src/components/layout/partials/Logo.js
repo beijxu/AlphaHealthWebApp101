@@ -21,9 +21,9 @@ const Logo = ({
       <h1 className="m-0">
         <Link to="/">
           <Image
-            src={require('../../../assets/images/alpha-health-logo.png')}
+            src={require('../../../assets/images/alpha-health-logo-1.png')}
             alt="Open"
-            width={100}
+            width={150}
             height={100} />
         </Link>
       </h1>
