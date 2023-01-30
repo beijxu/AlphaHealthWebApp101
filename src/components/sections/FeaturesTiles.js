@@ -44,8 +44,14 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: 'Build up the whole picture',
-    paragraph: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum — semper quis lectus nulla at volutpat diam ut venenatis.'
+    title: <p>How <span className="text-color-primary">Alpha Health</span> works</p>,
+    paragraph: 'By leveraging data science, Alpha Health automatically extracts personalized clinical research data' + 
+    'from medical journals, FDA databases, and clinical trial registries based on user profile, ' + 
+    'including patient-specific (e.g. demographics, social behaviors, comorbidities), cancer-specific' +
+    "(e.g. histologic type, grade, stage), and therapy-specific (e.g. surgery, radiotherapy, medical therapy)" +
+    ' characteristics. Extracted clinical research data include survival data, adverse events, and regulatory status,' +
+    ' which are synthesized into patient-centered information on personal prognosis, benefits and risks of therapies,' +
+     'and access to specific therapies.'
   };
 
   return (

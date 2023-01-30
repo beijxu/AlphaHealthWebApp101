@@ -61,11 +61,11 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-            Know yourself with latest <span className="text-color-primary">science</span> for free
+            Be your assistent with latest <span className="text-color-primary">science</span> for free
             </h1>
             <div className="container-xs">
               <p className="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Sign up <span className="text-color-primary">Alpha Health</span> and Get your personalized health report in minutues.
+                Sign up <span className="text-color-primary">Alpha Health</span> today and get your personalized health insights in minutues.
 
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
