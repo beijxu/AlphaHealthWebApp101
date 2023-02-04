@@ -69,18 +69,19 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-01.svg')}
+                      src={require('./../../assets/images/stephen-dawson-qwtCeJ5cLYs-unsplash.jpg')}
                       alt="Features tile icon 01"
-                      width={64}
-                      height={64} />
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Health Insights
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Our dashboard will tell you the health insights after analyzing your profile and ongoing treatment combined with the latest scientific data, 
+                    including your progression rate, metastasis rate, death rate, recover rate etc.
                     </p>
                 </div>
               </div>
@@ -91,18 +92,19 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-02.svg')}
-                      alt="Features tile icon 02"
-                      width={64}
-                      height={64} />
+                      src={require('./../../assets/images/nosiuol-pIVg7DPzNX0-unsplash.jpg')}
+                      alt="Features tile icon 01"
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Your risks
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    We will tell you the risks you currently have such as complications from treatment, 
+                    recurrence of the cancer, development of secondary cancers, and psychological effects
                     </p>
                 </div>
               </div>
@@ -113,18 +115,19 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-03.svg')}
-                      alt="Features tile icon 03"
-                      width={64}
-                      height={64} />
+                      src={require('./../../assets/images/cdc-XLhDvfz0sUM-unsplash.jpg')}
+                      alt="Features tile icon 01"
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Clinical Trials
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                  Information on clinical trials that the you may be eligible to participate in. You will
+                  access to experimental treatments that may not yet be available to the general public.
                     </p>
                 </div>
               </div>
@@ -135,18 +138,18 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-04.svg')}
-                      alt="Features tile icon 04"
-                      width={64}
-                      height={64} />
+                      src={require('./../../assets/images/roman-kraft-_Zua2hyvTBk-unsplash.jpg')}
+                      alt="Features tile icon 01"
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    In the news
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    What's in the news about the dieases, therapies and treatments that you are concerned about. 
                     </p>
                 </div>
               </div>
@@ -157,18 +160,20 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-05.svg')}
-                      alt="Features tile icon 05"
-                      width={64}
-                      height={64} />
+                      src={require('./../../assets/images/helena-lopes-PGnqT0rXWLs-unsplash.jpg')}
+                      alt="Features tile icon 01"
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    The Community 
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                  You will have access to communities that offer a supportive network of individuals who understand 
+                  what patients and their families are going through, also provide information on topics 
+                  such as treatment options, coping strategies, and financial assistance. 
                     </p>
                 </div>
               </div>
@@ -179,18 +184,18 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
                     <Image
-                      src={require('./../../assets/images/feature-tile-icon-06.svg')}
-                      alt="Features tile icon 06"
-                      width={64}
-                      height={64} />
+                      src={require('./../../assets/images/christin-hume-0MoF-Fe0w0A-unsplash.jpg')}
+                      alt="Features tile icon 01"
+                      width={280}
+                      height={280} />
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">
-                    Robust Workflow
+                    Newest Therapies
                     </h4>
                   <p className="m-0 text-sm">
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+                    Have early access to all latest therapies that might help with the diseases of concerns. 
                     </p>
                 </div>
               </div>
