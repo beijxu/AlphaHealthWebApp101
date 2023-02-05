@@ -28,6 +28,7 @@ If you need the design files, you can download them from Figma's Community 👉 
 
 * [Usage](#usage)
   * [Available Scripts](#available-scripts)
+    * [npm install] to load all node_modules
     * [npm start](#npm-start)
     * [npm test](#npm-test)
     * [npm run build](#npm-run-build)
