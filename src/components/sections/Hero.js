@@ -61,7 +61,7 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-            Know yourself with latest <span className="text-color-primary">science</span> for free
+            <span className="text-color-primary">Personalized</span> Health Insights and Clinical Trial Access
             </h1>
             <div className="container-xs">
               <p className="mt-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
