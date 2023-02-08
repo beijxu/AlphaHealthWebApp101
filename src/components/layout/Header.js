@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Logo from './partials/Logo';
+import Image from '../elements/Image';
+import Grid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -48,59 +51,38 @@ const Header = ({
     bottomOuterDivider && 'has-bottom-divider',
   );
 
+  const headerClasses = classNames(
+    'header-box',
+  )
+
+  
+
   return (
-    <header
-      {...props}
-      className={classes}
-    >
-      <div className="container">
-        <div className={
-          classNames(
-            'site-header-inner',
-            bottomDivider && 'has-bottom-divider'
-          )}>
-          <Logo />
-          {!hideNav &&
-            <>
-              <button
-                ref={hamburger}
-                className="header-nav-toggle"
-              >
-                <span className="screen-reader">Menu</span>
-                <span className="hamburger">
-                  <span className="hamburger-inner"></span>
-                </span>
-              </button>
-              <nav
-                ref={nav}
-                className={
-                  classNames(
-                    'header-nav is-active'
-                  )}>
-                <div className="header-nav-inner">
-                  <ul className={
-                    classNames(
-                      'list-reset text-xs',
-                      navPosition && `header-nav-${navPosition}`
-                    )}>
-                    <li>
-                    <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Sign in</Link>
-                    </li>
-                  </ul>
-                  {!hideSignin &&
-                    <ul
-                      className="list-reset header-nav-right"
-                    >
-                      <li>
-                        <Link to="#0" className="button button-dark button-wide-mobile button-sm" onClick={closeMenu}>Sign up</Link>
-                      </li>
-                    </ul>}
-                </div>
-              </nav>
-            </>}
-        </div>
-      </div>
-    </header>
+    
+    <div className="header-box">
+      <Grid container spacing={2}>
+        <Grid item xs={2}>
+          <Link to="/">
+            <Image
+              src={require('../../assets/images/alpha-health-logo-5.png')}
+              alt="Open"
+              width={150}
+              height={40} />
+          </Link>
+        </Grid>
+        <Grid item xs={6} className="header-nav-box">
+          <Grid container spacing={2} className="header-nav-text">
+            <Grid xs={3}>Home</Grid>
+            <Grid xs={3}>Research</Grid>
+            <Grid xs={3}>Treatments</Grid>
+            <Grid xs={3}>About Us</Grid>
+          </Grid>
+        </Grid>
+        <Grid item xs={2}>
+          buttons
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 

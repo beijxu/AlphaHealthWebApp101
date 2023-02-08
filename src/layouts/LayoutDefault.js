@@ -5,11 +5,10 @@ import Banner from '../components/layout/partials/Banner';
 
 const LayoutDefault = ({ children }) => (
   <>
-    <Header navPosition="right" className="reveal-from-bottom"/>
-    <main className="site-content">
+    <Header />
+    <main>
       {children}
     </main>
-    <Banner />
     <Footer />
   </>
 );
