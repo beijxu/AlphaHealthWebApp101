@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Link } from 'react-router-dom';
-import Logo from './partials/Logo';
 import Image from '../elements/Image';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import { buttonTheme } from '../MUIOverrides';
+import { ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -33,30 +34,6 @@ const Header = ({
   ...props
 }) => {
 
-
-  const nav = useRef(null);
-  const hamburger = useRef(null);
-
-  const openMenu = () => {
-    alert(1);
-  }
-
-  const closeMenu = () => {
-    alert("1");
-  }
-
-
-  const classes = classNames(
-    'site-header',
-    bottomOuterDivider && 'has-bottom-divider',
-  );
-
-  const headerClasses = classNames(
-    'header-box',
-  )
-
-  
-
   return (
     
     <div className="header-box">
@@ -79,7 +56,12 @@ const Header = ({
           </Grid>
         </Grid>
         <Grid item xs={2}>
-          buttons
+          <Stack spacing={2} direction="row">
+          <ThemeProvider theme={buttonTheme}>
+            <Button size="small" variant="contained" color="primary">Sign In</Button>
+            <Button size="small" variant="outlined" color="secondary">Sign Up!</Button>
+          </ThemeProvider>
+          </Stack>
         </Grid>
       </Grid>
     </div>
