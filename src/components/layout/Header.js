@@ -38,7 +38,7 @@ const Header = ({
     
     <div className="header-box">
       <Grid container spacing={2}>
-        <Grid item xs={2}>
+        <Grid item xs={3}>
           <Link to="/">
             <Image
               src={require('../../assets/images/alpha-health-logo-5.png')}
@@ -47,7 +47,7 @@ const Header = ({
               height={40} />
           </Link>
         </Grid>
-        <Grid item xs={6} className="header-nav-box">
+        <Grid item xs={6}>
           <Grid container spacing={2} className="header-nav-text">
             <Grid xs={3}>Home</Grid>
             <Grid xs={3}>Research</Grid>
@@ -55,12 +55,12 @@ const Header = ({
             <Grid xs={3}>About Us</Grid>
           </Grid>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3} className="header-button-box">
           <Stack spacing={2} direction="row">
-          <ThemeProvider theme={buttonTheme}>
-            <Button size="small" variant="contained" color="primary">Sign In</Button>
-            <Button size="small" variant="outlined" color="secondary">Sign Up!</Button>
-          </ThemeProvider>
+            <ThemeProvider theme={buttonTheme}>
+              <Button size="small" variant="contained" color="success">Sign In</Button>
+              <Button size="small" variant="outlined" color="secondary">Sign Up!</Button>
+            </ThemeProvider>
           </Stack>
         </Grid>
       </Grid>
