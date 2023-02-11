@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Image from '../elements/Image';
+import Image from '../components/elements/Image';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import { buttonTheme } from '../MUIOverrides';
+import { buttonTheme } from '../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
@@ -41,7 +41,7 @@ const Header = ({
         <Grid item xs={3}>
           <Link to="/">
             <Image
-              src={require('../../assets/images/alpha-health-logo-5.png')}
+              src={require('../assets/images/alpha-health-logo-5.png')}
               alt="Open"
               width={150}
               height={40} />
