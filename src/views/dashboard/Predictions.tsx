@@ -79,7 +79,7 @@ export default function Predictions() {
      treatments.map((treatment) => (
       <div><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment}</div>
     ))}
-    <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={3} otherDeathCount={4} />
+    <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={37} otherDeathCount={15} years={10}/>
     </>
   );
 }

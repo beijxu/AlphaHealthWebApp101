@@ -1,8 +1,4 @@
 import React from 'react';
-import Stack from '@mui/material/Stack';
-import { buttonTheme } from '../../components/MUIOverrides';
-import { ThemeProvider } from '@mui/material/styles';
-import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
 const HomeInfo = () => {
