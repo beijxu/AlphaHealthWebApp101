@@ -6,3 +6,16 @@ html *
 .font-white {
     color: #fff;
 }
+
+.font-tiny {
+    font-size: 15px;
+}
+
+.span-2-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.indentation-small {
+    margin-left: 20px;
+}

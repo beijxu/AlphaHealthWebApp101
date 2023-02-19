@@ -1,15 +1,12 @@
 import * as React from 'react';
-import SwipeableViews from 'react-swipeable-views';
-import { useTheme } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Predictions from './Predictions.tsx';
 
 interface TabPanelProps {
   children?: React.ReactNode;
-  dir?: string;
   index: number;
   value: number;
 }
@@ -21,8 +18,8 @@ function TabPanel(props: TabPanelProps) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`full-width-tabpanel-${index}`}
-      aria-labelledby={`full-width-tab-${index}`}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
       {value === index && (
@@ -36,54 +33,44 @@ function TabPanel(props: TabPanelProps) {
 
 function a11yProps(index: number) {
   return {
-    id: `full-width-tab-${index}`,
-    'aria-controls': `full-width-tabpanel-${index}`,
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
 export default function Dashboard() {
-  const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index: number) => {
-    setValue(index);
-  };
-
   return (
-    <Box sx={{ bgcolor: 'background.paper' }}>
-      <AppBar position="static">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="inherit"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
-        </Tabs>
-      </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          Item One
+    <div className='dashboard-box'>
+      <Box sx={{ width: '100%', borderStyle: 'solid', padding: 1}}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
+            <Tab 
+              sx={{ marginRight: 10, textTransform: 'none', fontSize: 15, color: '#000'}} 
+              label="Personalized health risk prediction" {...a11yProps(0)} wrapped />
+            <Tab 
+              sx={{ marginRight: 10, textTransform: 'none', fontSize: 15, color: '#000'}} 
+              label="Treatment benefits & risks" {...a11yProps(1)} wrapped />
+            <Tab 
+              sx={{ textTransform: 'none', fontSize: 15, color: '#000' }} 
+              label="Clinical trial access" {...a11yProps(2)} wrapped />
+          </Tabs>
+        </Box>
+        <TabPanel value={value} index={0}>
+          <Predictions />
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel value={value} index={1}>
           Item Two
         </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
+        <TabPanel value={value} index={2}>
           Item Three
         </TabPanel>
-      </SwipeableViews>
-    </Box>
+      </Box>
+    </div>
   );
 }
