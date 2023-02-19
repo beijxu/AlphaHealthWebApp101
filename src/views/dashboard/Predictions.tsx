@@ -6,6 +6,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Divider } from '@mui/material';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+import NotListedLocationIcon from '@mui/icons-material/NotListedLocation';
+import PredictionModal from './PredictionModal';
 
 function createData(
   name: string,
@@ -17,16 +21,31 @@ function createData(
 }
 
 const rows = [
-  createData('Probability of recurrence', '15%', '25%', '30%'),
-  createData('Probability of metastasis', '5%', '10%', '15%'),
   createData('Probability of prostate cancer death', '0%', '3%', '5%'),
   createData('Probability of other death', '5%', '8%', '12%'),
 ];
 
+const treatments = [
+  'Surgery: prostatectomy',
+  'Radiotherapy: brachytherapy',
+  'Radiotherapy: external-beam radiation',
+  'Radiotherapy: external-beam radiation + Medical therapy: androgen-deprivation therapy',
+];
+
 const headers = ['Outcomes', '5-year', '10-year', '15-year'];
 
+
+
 export default function Predictions() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+    console.log("have set open state to true");
+  }
+  const handleClose = () => setOpen(false);
+
   return (
+    <>
     <TableContainer sx={{ boxShadow: 'none'}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -43,7 +62,9 @@ export default function Predictions() {
               <TableCell component="th" scope="row" sx={{ border: 0}}>
                 {row.name}
               </TableCell>
-              <TableCell align="right" sx={{ border: 0}}>{row.firstMilestone}</TableCell>
+              <TableCell align="right" sx={{ border: 0}}>
+                {row.firstMilestone}<NotListedLocationIcon onClick={handleOpen} sx={{fontSize: 15}}/>
+              </TableCell>
               <TableCell align="right" sx={{ border: 0}}>{row.secondMilestone}</TableCell>
               <TableCell align="right" sx={{ border: 0}}>{row.thirdMilestone}</TableCell>
             </TableRow>
@@ -51,5 +72,14 @@ export default function Predictions() {
         </TableBody>
       </Table>
     </TableContainer>
+    <p/>
+    <Divider />
+    <p className="align-center"><b>Therapeutic options</b></p>
+    {
+     treatments.map((treatment) => (
+      <div><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment}</div>
+    ))}
+    <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={3} otherDeathCount={4} />
+    </>
   );
 }
