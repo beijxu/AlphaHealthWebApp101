@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Dashboard from './Dashboard.tsx';
-import HealthProfile from './HealthProfile.tsx';
+import HealthProfile from './profile/HealthProfile.tsx';
 
 
 const DashboardMain = () => {

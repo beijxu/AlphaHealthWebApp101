@@ -65,12 +65,12 @@ const draw = (cancerDeathCount, otherDeathCount) => {
 
 const drawFullRows = (rows, icon, count) => {
     const itemsPerRow = 20;
-    for (let i = 0; i < count / itemsPerRow; i++) {
+    for (let i = 0; i < Math.floor(count / itemsPerRow); i++) {
         const items = [];
         for (let j = 0; j< itemsPerRow; j++) {
             items.push(icon);
         }
-        rows.push(<div>{items}</div>);        
+        rows.push(<div>{items}</div>); 
     }
 }
 
@@ -90,9 +90,9 @@ export default function PredictionModal({openState, onCloseCallback, cancerDeath
         <Box sx={style}>
           {draw(cancerDeathCount, otherDeathCount)}
           <p className='align-center'><b>Interpretation</b></p>
-          <div className="font-tiny">{100 - cancerDeathCount - otherDeathCount} will likely survive in the next {years} years.</div>
-          <div className="font-tiny">{cancerDeathCount} will likely die from prostate state cancer in the next {years} years.</div>
-          <div className="font-tiny">{otherDeathCount}  will likely die from other causes in the next {years} years.</div>
+          <div className="font-tiny"><span style={{ minWidth: '20px', display: 'inline-block'}}>{100 - cancerDeathCount - otherDeathCount}</span>will likely survive in the next {years} years.</div>
+          <div className="font-tiny"><span style={{ minWidth: '20px', display: 'inline-block'}}>{cancerDeathCount}</span>will likely die from prostate state cancer in the next {years} years.</div>
+          <div className="font-tiny"><span style={{ minWidth: '20px', display: 'inline-block'}}>{otherDeathCount}</span>will likely die from other causes in the next {years} years.</div>
         </Box>
       </Modal>
     </div>

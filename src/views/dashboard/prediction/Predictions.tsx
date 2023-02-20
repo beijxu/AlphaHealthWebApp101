@@ -26,10 +26,22 @@ const rows = [
 ];
 
 const treatments = [
-  'Surgery: prostatectomy',
-  'Radiotherapy: brachytherapy',
-  'Radiotherapy: external-beam radiation',
-  'Radiotherapy: external-beam radiation + Medical therapy: androgen-deprivation therapy',
+  {
+    id: 't1',
+    name: 'Surgery: prostatectomy',
+  },
+  {
+    id: 't2',
+    name: 'Radiotherapy: brachytherapy',
+  },
+  {
+    id: 't3',
+    name: 'Radiotherapy: external-beam radiation',
+  },
+  {
+    id: 't4',
+    name: 'Radiotherapy: external-beam radiation + Medical therapy: androgen-deprivation therapy',
+  },
 ];
 
 const headers = ['Outcomes', '5-year', '10-year', '15-year'];
@@ -40,7 +52,6 @@ export default function Predictions() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
-    console.log("have set open state to true");
   }
   const handleClose = () => setOpen(false);
 
@@ -77,9 +88,9 @@ export default function Predictions() {
     <p className="align-center"><b>Therapeutic options</b></p>
     {
      treatments.map((treatment) => (
-      <div><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment}</div>
+      <div><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment.name}</div>
     ))}
-    <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={37} otherDeathCount={15} years={10}/>
+    <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={90} otherDeathCount={1} years={10}/>
     </>
   );
 }
