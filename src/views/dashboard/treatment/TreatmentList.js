@@ -6,8 +6,8 @@ const onChange=(event, selectedTreatment) => {
     console.log(selectedTreatment);
 };
 
-const popularGroup = 'Popular Treaments';
-const otherGroup = 'Other Treaments';
+const popularGroup = 'Popular Treatments';
+const otherGroup = 'Other Treatments';
 
 const treatments = [
       {
@@ -39,6 +39,7 @@ const treatments = [
 
 export default function TreatmentList({selectedTreatment}) {
   return (
+    <>
     <Autocomplete
       disablePortal
       id="treatment-list-box"
@@ -50,6 +51,7 @@ export default function TreatmentList({selectedTreatment}) {
       value={treatments.filter((treatment) => treatment.id === selectedTreatment)[0]}
       renderInput={(params) => <TextField {...params} />}
     />
+    </>
   );
 }
 

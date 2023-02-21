@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Predictions from './prediction/Predictions.tsx';
 import Treatments from './treatment/Treatments.js';
+import Trials from './trial/Trials';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -69,7 +70,7 @@ export default function Dashboard() {
           <Treatments />
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          <Trials />
         </TabPanel>
       </Box>
     </div>

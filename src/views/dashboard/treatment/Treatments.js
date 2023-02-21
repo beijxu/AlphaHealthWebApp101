@@ -3,6 +3,7 @@ import TreatmentList from './TreatmentList';
 import TreatmentBenefits from './TreatmentBenefits';
 import TreatmentRisk from './TreatmentRisk';
 import Divider from '@mui/material/Divider';
+import Accessability from './Accessability';
 
 
 export default function Treatments() {
@@ -86,13 +87,15 @@ export default function Treatments() {
     <>
         <TreatmentList selectedTreatment='t1' />
         <p/>
-        <Divider />
-        <p/>
         <TreatmentBenefits treatment={treatment}/>
         <p/>
         <Divider />
         <p/>
         <TreatmentRisk treatment={treatment} />
+        <p/>
+        <Divider />
+        <p/>
+        <Accessability treatment={treatment} />
     </>
   );
 }
