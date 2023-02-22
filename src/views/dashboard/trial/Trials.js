@@ -2,7 +2,10 @@ import React from 'react';
 import TreatmentList from '../treatment/TreatmentList';
 import Trial from './Trial';
 import { Divider } from '@mui/material';
-
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import FilterModal from './FilterModal';
+import { Filter } from '@mui/icons-material';
 
 const trials = [
     {
@@ -18,7 +21,6 @@ const trials = [
             }
         ],
         institution: 'Fred Hutch Cancer Center, Seattle, Washington',
-        groupAssignments: 'only',
         groups: [
             {
                 groupId: 'g1',
@@ -43,7 +45,6 @@ const trials = [
             }
         ],
         institution: 'Kaiser Permanente, Bellevue, Washington',
-        groupAssignments: 'random',
         groups: [
             {
                 groupId: 'g1',
@@ -65,14 +66,29 @@ const trials = [
     }
 ]
 export default function Trials() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+      setOpen(true);
+    }
+    const handleClose = () => setOpen(false);
+
     return (
         <>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
             <TreatmentList selectedTreatment='t1'/>
+          </Grid>
+          <Grid item xs={4}>
+            <Button onClick={handleOpen}>Filter</Button>
+          </Grid>
+          </Grid>
+            
             {
                 trials.slice(0, trials.length-1).map(trial => <><p/><Trial trial={trial} /><p/><Divider /></>)
             }   
             <p/>
-            <Trial trial={trials.slice(-1)[0]} />         
+            <Trial trial={trials.slice(-1)[0]} />     
+            <FilterModal openState={open} onCloseCallback={handleClose} />    
         </>
     );
 }
