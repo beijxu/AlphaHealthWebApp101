@@ -10,3 +10,30 @@ export const buttonTheme = createTheme({
     }
   },
 });
+
+export const filterModalTheme = createTheme({
+  components: {
+    // Name of the component
+    MuiTableCell: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: '0.875rem',
+          border: 0,
+          padding: 0
+        },
+      },
+    },
+
+    MuiTypography: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: '0.875rem',
+        },
+      },
+    },
+  },
+});
