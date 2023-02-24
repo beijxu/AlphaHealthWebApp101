@@ -1,6 +1,10 @@
 import * as React from 'react';
 import Divider from '@mui/material/Divider';
 import CancerProfile from './CancerProfile.tsx';
+import SerumHistory from './SerumHistory';
+import { buttonTheme } from '../../../components/MUIOverrides';
+import { ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 
 const HealthProfile = () => {
@@ -27,6 +31,14 @@ const HealthProfile = () => {
         <Divider />
         <p/>
         <CancerProfile />
+        <Divider />
+        <p />
+        <SerumHistory />
+        <Divider />
+        <p />
+        <ThemeProvider theme={buttonTheme}>
+              <Button size="small" variant="contained" color="success">Modify Profile</Button>
+        </ThemeProvider>
       </>
     );
   }

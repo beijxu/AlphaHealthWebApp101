@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import { getFirstCell } from '../../../utils/UIUtils';
 
 const getGroupAssignmentText = (count) => {
-    if (count == 1) {
+    if (count === 1) {
         return "There is only 1 group. All participants will be assigned to the group below.";
     }
     return `There are ${count} groups. Participants will be assigned randomly to one of the groups below.`

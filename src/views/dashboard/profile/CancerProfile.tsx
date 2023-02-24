@@ -20,12 +20,7 @@ const CancerProfile = () => {
           },
         ],
     }
-    const age = 62;
-    const sex = 'male';
-    const race = 'black';
-    const maritalStatus = 'married';
-    const gleasonScore = '3+4';
-    const gleasonScoreDate = '2020-09';
+
     return (
       <>
         <b>Prostate cancer</b>

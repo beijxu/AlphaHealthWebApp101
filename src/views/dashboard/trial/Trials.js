@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
+import Pagination from '@mui/material/Pagination';
 
 const trials = [
     {
@@ -66,11 +67,588 @@ const trials = [
                 groupName: 'Civasheet 75 Gy',
             }
         ],
-    }
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 3;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 4',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 68 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 5',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 6',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 7',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 8',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 9;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 10',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 61 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 60 Gy or 75 Gy;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 60 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
+    {
+        id: 't2',
+        status: 'Recruiting',
+        studyType: 'Interventional',
+        phase: '1',
+        treatmentType: 'Radiotherapy',
+        studies: [
+            {
+                type: 'Radiotherapy',
+                study: 'Civasheet 99;',
+            },
+            {
+                type: 'Radiotherapy',
+                study: 'external-beam radiation',
+            }
+        ],
+        institution: 'Kaiser Permanente, Bellevue, Washington',
+        groups: [
+            {
+                groupId: 'g1',
+                groupName: 'Civasheet 100',
+            },
+            {
+                groupId: 'g2',
+                groupName: 'Civasheet 60 Gy',
+            },
+            {
+                groupId: 'g3',
+                groupName: 'Civasheet 75 Gy + external-beam radiation 45 Gy in 25 fractions',
+            },
+            {
+                groupId: 'g4',
+                groupName: 'Civasheet 75 Gy',
+            }
+        ],
+    },
 ]
 export default function Trials() {
     const [open, setOpen] = React.useState(false);
-    const [sortBy, setSortBy] = React.useState('distance')
+    const [sortBy, setSortBy] = React.useState('distance');
+    const [pageIndex, setPageIndex] = React.useState(0);
     const handleOpen = () => {
       setOpen(true);
     }
@@ -78,6 +656,29 @@ export default function Trials() {
     const handleChange = (event) => {
         setSortBy(event.target.value);
     };
+    const handlePaginationChange = (event, value) => {
+        setPageIndex(value - 1);
+    }
+
+    const pageSize = 5;
+
+    const pages = [];
+    const pageCount = Math.ceil(trials.length / pageSize);
+    for(let i = 0; i < pageCount; i++) {
+        const itemCount = Math.min(pageSize, trials.length - i * pageSize);
+        const page = [];
+        for(let j=0; j<itemCount; j++) {
+            const index = i * pageSize + j;
+            const trial = trials[ i * pageSize + j];
+            if (index === trials.length - 1) {
+                page.push(<Trial trial={trial} />);
+            } else {
+                page.push(<><p/><Trial trial={trial} /><p/><Divider /></>);
+            }
+        }
+        pages.push(page);
+    }
+
 
     return (
         <>
@@ -105,13 +706,9 @@ export default function Trials() {
             </FormControl>
           </Grid>
         </Grid>
-            
-            {
-                trials.slice(0, trials.length-1).map(trial => <><p/><Trial trial={trial} /><p/><Divider /></>)
-            }   
-            <p/>
-            <Trial trial={trials.slice(-1)[0]} />     
-            <FilterModal openState={open} onCloseCallback={handleClose} />    
+        <Pagination count={pageCount} onChange={handlePaginationChange} />
+        {pages[pageIndex]}
+        <FilterModal openState={open} onCloseCallback={handleClose} />    
         </>
     );
 }

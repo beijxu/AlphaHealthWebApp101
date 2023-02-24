@@ -44,10 +44,6 @@ const treatments = [
   },
 ];
 
-const headers = ['Outcomes', '5-year', '10-year', '15-year'];
-
-
-
 export default function Predictions() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
