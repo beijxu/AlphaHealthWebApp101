@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { ProstateCancerCard} from './model/ProstateCancerCard.tsx';
 
 const CancerProfile = () => {
-    const cancerProfile: ProstateCancerCard = {
+    const cancerProfile = {
         gleasonScore: '3+4',
         gleasonScoreDate: '2020-09',
         tumorStageDate: '2020-11',
