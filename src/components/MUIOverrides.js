@@ -37,3 +37,34 @@ export const filterModalTheme = createTheme({
     },
   },
 });
+
+export const healthProfileInputTheme = createTheme({
+  components: {
+    // Name of the component
+    MuiOutlinedInput: {
+      styleOverrides: {
+        // Name of the slot
+        input: {
+          border: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          margin: 0,
+        }
+      }
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          margin: 0,
+          height: '3px',
+        }
+      }
+    }
+  },
+})

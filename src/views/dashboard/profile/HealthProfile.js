@@ -5,6 +5,7 @@ import SerumHistory from './SerumHistory';
 import { buttonTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import EditProfile from './EditProfile';
 
 
 const HealthProfile = () => {
@@ -39,6 +40,7 @@ const HealthProfile = () => {
         <ThemeProvider theme={buttonTheme}>
               <Button size="small" variant="contained" color="success">Modify Profile</Button>
         </ThemeProvider>
+        <EditProfile />
       </>
     );
   }

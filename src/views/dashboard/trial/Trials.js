@@ -686,26 +686,11 @@ export default function Trials() {
           <Grid item xs={8}>
             <TreatmentList selectedTreatment='t1'/>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={4}>
             <Button onClick={handleOpen}>Filter</Button>
           </Grid>
-          <Grid item xs={2}>
-          <FormControl sx={{ m: 1, minWidth: 120, padding: '7.5px' }} size="small" hiddenLabel>
-            <InputLabel>Sort</InputLabel>
-            <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={sortBy}
-            label="Age"
-            onChange={handleChange}
-            >
-                <MenuItem value='status'>Study Status</MenuItem>
-                <MenuItem value='type'>Study Type</MenuItem>
-                <MenuItem value='distance'>Distance</MenuItem>
-            </Select>
-            </FormControl>
-          </Grid>
         </Grid>
+        <p/>
         <Pagination count={pageCount} onChange={handlePaginationChange} />
         {pages[pageIndex]}
         <FilterModal openState={open} onCloseCallback={handleClose} />    
