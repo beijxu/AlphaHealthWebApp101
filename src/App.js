@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
+import React from 'react';
+import { Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ReactGA from 'react-ga';
 
@@ -27,7 +27,7 @@ const App = () => {
         .catch(error => console.error(error));
     }, []);
 
-  //getTrials();
+
   return (
     <Switch>
       <AppRoute exact path="/" component={Home} layout={LayoutDefault} />

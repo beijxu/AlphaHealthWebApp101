@@ -11,20 +11,18 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import NotListedLocationIcon from '@mui/icons-material/NotListedLocation';
 import PredictionModal from './PredictionModal';
 
+function createData(
+  name: string,
+  firstMilestone: string,
+  secondMilestone: string,
+  thirdMilestone: string,
+) {
+  return { name, firstMilestone, secondMilestone, thirdMilestone };
+}
 
 const rows = [
-  {
-    name: 'Probability of prostate cancer death',
-    firstMilestone: '0%',
-    secondMilestone: '3%',
-    thirdMilestone: '5%',
-  },
-  {
-    name: 'Probability of other death',
-    firstMilestone: '5%',
-    secondMilestone: '8%',
-    thirdMilestone: '12%',
-  },
+  createData('Probability of prostate cancer death', '0%', '3%', '5%'),
+  createData('Probability of other death', '5%', '8%', '12%'),
 ];
 
 const treatments = [
