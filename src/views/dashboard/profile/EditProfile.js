@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Divider from '@mui/material/Divider';
-import CancerProfile from './CancerProfile';
+import EditCancerProfile from './EditCancerProfile';
 import SerumHistory from './SerumHistory';
 import { buttonTheme } from '../../../components/MUIOverrides';
 import Button from '@mui/material/Button';
@@ -12,6 +12,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
 const EditProfile = () => {
+    // to move to props
+    const gleasonScores = [ ['3+4', '2020-09']];
+    
     const [race, setRace] = useState('Black');
     const onRaceChange = (event) => {
         setRace(event.target.value);
@@ -85,7 +88,7 @@ const EditProfile = () => {
         <p/>
         <Divider />
         <p/>
-        <CancerProfile />
+        <EditCancerProfile />
         <Divider />
         <p />
         <SerumHistory />

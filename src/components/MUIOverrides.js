@@ -11,6 +11,27 @@ export const buttonTheme = createTheme({
   },
 });
 
+export const tinyButtonTheme = createTheme({
+  palette: {
+    info: {
+        main: '#A1D2FF',
+    },
+    secondary: {
+        main: '#000',
+    }
+  },
+  MuiButton: {
+    root: {
+      padding: 0,
+    }
+  },
+  MuiButtonBase: {
+    root: {
+      padding: 0,
+    }
+  }
+});
+
 export const filterModalTheme = createTheme({
   components: {
     // Name of the component
