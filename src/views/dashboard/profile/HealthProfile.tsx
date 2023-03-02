@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Divider from '@mui/material/Divider';
-import CancerProfile from './CancerProfile.tsx';
+import CancerProfile from './CancerProfile';
 import SerumHistory from './SerumHistory';
 import { buttonTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';

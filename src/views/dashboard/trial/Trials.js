@@ -5,10 +5,6 @@ import { Divider } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import FilterModal from './FilterModal';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
 import Pagination from '@mui/material/Pagination';
 
 const trials = [
@@ -647,15 +643,11 @@ const trials = [
 ]
 export default function Trials() {
     const [open, setOpen] = React.useState(false);
-    const [sortBy, setSortBy] = React.useState('distance');
     const [pageIndex, setPageIndex] = React.useState(0);
     const handleOpen = () => {
       setOpen(true);
     }
     const handleClose = () => setOpen(false);
-    const handleChange = (event) => {
-        setSortBy(event.target.value);
-    };
     const handlePaginationChange = (event, value) => {
         setPageIndex(value - 1);
     }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Switch } from 'react-router-dom';
 import AppRoute from './utils/AppRoute';
 import ReactGA from 'react-ga';
