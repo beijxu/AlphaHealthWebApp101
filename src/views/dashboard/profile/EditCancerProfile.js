@@ -1,10 +1,24 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import { healthProfileInputTheme, tinyButtonTheme } from '../../../components/MUIOverrides';
+import { healthProfileInputTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+
 
 const EditCancerProfile = () => {
+    const [value, setValue] = React.useState(
+        dayjs('2014-08-18T21:11:54'),
+      );
+    
+      const handleChange = (newValue) => {
+        setValue(newValue);
+      };
+
     const cancerProfile = {
         gleasonHistory: [
             {
@@ -42,7 +56,13 @@ const EditCancerProfile = () => {
             cancerProfile.gleasonHistory.map(item => 
                 <div className='span-2-box'>
                     <span>Gleason score: <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.score} /></span>
-                    <span><TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.date}/></span>
+                    <span>                    <LocalizationProvider dateAdapter={AdapterDayjs}>  
+                    <MobileDatePicker
+          inputFormat="MM/DD/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        /></LocalizationProvider></span>
                 </div>
                 )
         }
@@ -54,7 +74,15 @@ const EditCancerProfile = () => {
                 <>
                 <div className='span-2-box '>
                     <span>tumor stage (TNM)</span>
-                    <span><TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.date}/></span>
+                    <span>  
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>  
+                    <MobileDatePicker
+          inputFormat="MM/DD/YYYY"
+          value={value}
+          onChange={handleChange}
+          renderInput={(params) => <TextField {...params} />}
+        /></LocalizationProvider>
+</span>
                 </div>
                 <div className='indentation-small'>T (primary tumor): <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.tumorStageT}/></div>
                 <div className='indentation-small'>N (pelvic lymph node):  <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.tumorStageN}/></div>
