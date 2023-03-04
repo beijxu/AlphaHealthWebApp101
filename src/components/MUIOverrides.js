@@ -89,3 +89,17 @@ export const healthProfileInputTheme = createTheme({
     }
   },
 })
+
+export const linkStyleButton = createTheme({
+  components: {
+    // Name of the component
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          textTransform: 'none'
+        },
+      },
+    },
+  },
+})

@@ -37,7 +37,8 @@ const treatments = [
       }
 ];
 
-export default function TreatmentList({selectedTreatment}) {
+export default function TreatmentList({treatmentId}) {
+  console.log(treatmentId);
   return (
     <>
     <Autocomplete
@@ -48,7 +49,7 @@ export default function TreatmentList({selectedTreatment}) {
       getOptionLabel={(option) => option.name}
       onChange= {onChange}
       sx={{ width: 500}}
-      value={treatments.filter((treatment) => treatment.id === selectedTreatment)[0]}
+      value={treatments.filter((treatment) => treatment.id === treatmentId)[0]}
       renderInput={(params) => <TextField {...params} />}
     />
     </>

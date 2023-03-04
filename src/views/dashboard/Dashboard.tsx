@@ -41,17 +41,27 @@ function a11yProps(index: number) {
 }
 
 export default function Dashboard() {
-  const [value, setValue] = React.useState(0);
+  const [tab, setTab] = React.useState(0);
+  const [treatmentId, setTreatmentId] = React.useState(null);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  const onTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setTab(newValue);
   };
+
+  const handlePredictionPageTreatmentSelection = (treatmentId) => {
+    setTab(1);
+    setTreatmentId(treatmentId);
+  }
+
+  const handleTreatmentPageTrialLinkClick = () => {
+    setTab(2);
+  }
 
   return (
     <div className='dashboard-box'>
       <Box sx={{ width: '100%', borderStyle: 'solid', padding: 1}}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
+          <Tabs value={tab} onChange={onTabChange} aria-label="basic tabs example" centered>
             <Tab 
               sx={{ marginRight: 10, textTransform: 'none', fontSize: 15, color: '#000'}} 
               label="Personalized health risk prediction" {...a11yProps(0)} wrapped />
@@ -63,14 +73,14 @@ export default function Dashboard() {
               label="Clinical trial access" {...a11yProps(2)} wrapped />
           </Tabs>
         </Box>
-        <TabPanel value={value} index={0}>
-          <Predictions />
+        <TabPanel value={tab} index={0}>
+          <Predictions handlePredictionPageTreatmentSelection={handlePredictionPageTreatmentSelection}/>
         </TabPanel>
-        <TabPanel value={value} index={1}>
-          <Treatments />
+        <TabPanel value={tab} index={1}>
+          <Treatments treatmentId={treatmentId}  handleTreatmentPageTrialLinkClick={handleTreatmentPageTrialLinkClick}/>
         </TabPanel>
-        <TabPanel value={value} index={2}>
-          <Trials />
+        <TabPanel value={tab} index={2}>
+          <Trials treatmentId={treatmentId} />
         </TabPanel>
       </Box>
     </div>

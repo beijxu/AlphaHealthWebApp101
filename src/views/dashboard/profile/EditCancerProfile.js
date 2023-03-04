@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import { healthProfileInputTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';

@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import Accessability from './Accessability';
 
 
-export default function Treatments() {
+export default function Treatments({treatmentId, handleTreatmentPageTrialLinkClick}) {
   const treatment = {
     id: 't1',
     name: 'Radiotherapy: external-beam radiation + Medical therapy: androgen-deprivation therapy',
@@ -83,9 +83,10 @@ export default function Treatments() {
       },
     ]
   }
+  const selectedTreatmentId = treatmentId ? treatmentId : 't1';
   return (
     <>
-        <TreatmentList selectedTreatment='t1' />
+        <TreatmentList treatmentId={selectedTreatmentId} />
         <p/>
         <TreatmentBenefits treatment={treatment}/>
         <p/>
@@ -95,7 +96,7 @@ export default function Treatments() {
         <p/>
         <Divider />
         <p/>
-        <Accessability treatment={treatment} />
+        <Accessability treatment={treatment} handleTreatmentPageTrialLinkClick={handleTreatmentPageTrialLinkClick} />
     </>
   );
 }

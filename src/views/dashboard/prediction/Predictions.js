@@ -10,6 +10,9 @@ import { Divider } from '@mui/material';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import NotListedLocationIcon from '@mui/icons-material/NotListedLocation';
 import PredictionModal from './PredictionModal';
+import Button from '@mui/material/Button';
+import { linkStyleButton } from '../../../components/MUIOverrides';
+import { ThemeProvider } from '@mui/material/styles';
 
 const rows = [
   {
@@ -45,12 +48,16 @@ const treatments = [
   },
 ];
 
-export default function Predictions() {
+export default function Predictions({handlePredictionPageTreatmentSelection}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
   }
   const handleClose = () => setOpen(false);
+
+  const onClickTreatment = (treatmentId) => {
+    handlePredictionPageTreatmentSelection(treatmentId);
+  }
 
   return (
     <>
@@ -83,10 +90,12 @@ export default function Predictions() {
     <p/>
     <Divider />
     <p className="align-center"><b>Therapeutic options</b></p>
+    <ThemeProvider theme={linkStyleButton}>
     {
      treatments.map((treatment) => (
-      <div><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment.name}</div>
+      <div><Button color="info" onClick={() => onClickTreatment(treatment.id)}><ArrowCircleRightOutlinedIcon fontSize='small' sx={{verticalAlign: 'middle', paddingRight: 1}}/>{treatment.name}</Button></div>
     ))}
+    </ThemeProvider>
     <PredictionModal openState={open} onCloseCallback={handleClose} cancerDeathCount={90} otherDeathCount={1} years={10}/>
     </>
   );
