@@ -2,9 +2,6 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
-const onChange=(event, selectedTreatment) => {
-    console.log(selectedTreatment);
-};
 
 const popularGroup = 'Popular Treatments';
 const otherGroup = 'Other Treatments';
@@ -37,8 +34,11 @@ const treatments = [
       }
 ];
 
-export default function TreatmentList({treatmentId}) {
-  console.log(treatmentId);
+export default function TreatmentList({treatmentId, handleTreatmentChange}) {
+  const onTreatmentChange=(event, selectedTreatment) => {
+    handleTreatmentChange(selectedTreatment.id);
+};
+
   return (
     <>
     <Autocomplete
@@ -47,7 +47,7 @@ export default function TreatmentList({treatmentId}) {
       options={treatments.sort((a, b) => b.group.localeCompare(a.group))}
       groupBy={(option) => option.group}
       getOptionLabel={(option) => option.name}
-      onChange= {onChange}
+      onChange= {onTreatmentChange}
       sx={{ width: 500}}
       value={treatments.filter((treatment) => treatment.id === treatmentId)[0]}
       renderInput={(params) => <TextField {...params} />}

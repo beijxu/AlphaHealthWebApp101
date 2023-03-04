@@ -5,7 +5,6 @@ import SerumHistory from './SerumHistory';
 import { buttonTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import EditProfile from './EditProfile';
 
 
 const HealthProfile = ({onModifyCallback}) => {
@@ -42,7 +41,7 @@ const HealthProfile = ({onModifyCallback}) => {
         <Divider />
         <p />
         <ThemeProvider theme={buttonTheme}>
-              <Button size="small" variant="contained" color="success" onClick={onModifyClick}>Modify Profile</Button>
+              <Button size="small" variant="contained" color="info" onClick={onModifyClick}>Modify Profile</Button>
         </ThemeProvider>
       </>
     );

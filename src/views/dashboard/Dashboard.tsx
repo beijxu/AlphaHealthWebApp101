@@ -57,6 +57,10 @@ export default function Dashboard() {
     setTab(2);
   }
 
+  const handleTreatmentChange = (treatmentId) => {
+    setTreatmentId(treatmentId);
+  }
+
   return (
     <div className='dashboard-box'>
       <Box sx={{ width: '100%', borderStyle: 'solid', padding: 1}}>
@@ -77,10 +81,10 @@ export default function Dashboard() {
           <Predictions handlePredictionPageTreatmentSelection={handlePredictionPageTreatmentSelection}/>
         </TabPanel>
         <TabPanel value={tab} index={1}>
-          <Treatments treatmentId={treatmentId}  handleTreatmentPageTrialLinkClick={handleTreatmentPageTrialLinkClick}/>
+          <Treatments treatmentId={treatmentId}  handleTreatmentPageTrialLinkClick={handleTreatmentPageTrialLinkClick} handleTreatmentChange={handleTreatmentChange}/>
         </TabPanel>
         <TabPanel value={tab} index={2}>
-          <Trials treatmentId={treatmentId} />
+          <Trials treatmentId={treatmentId} handleTreatmentChange={handleTreatmentChange}/>
         </TabPanel>
       </Box>
     </div>

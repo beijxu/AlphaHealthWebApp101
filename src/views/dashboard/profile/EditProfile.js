@@ -94,7 +94,7 @@ const EditProfile = ({onSaveCallback}) => {
         <Divider />
         <p />
         <ThemeProvider theme={buttonTheme}>
-              <Button size="small" variant="contained" color="success" onClick={onSaveClick}>Save Profile</Button>
+              <Button size="small" variant="contained" color="info" onClick={onSaveClick}>Save Profile</Button>
         </ThemeProvider>
       </>
     );

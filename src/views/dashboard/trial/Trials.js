@@ -641,7 +641,7 @@ const trials = [
         ],
     },
 ]
-export default function Trials({treatmentId}) {
+export default function Trials({treatmentId, handleTreatmentChange}) {
     const [open, setOpen] = React.useState(false);
     const [pageIndex, setPageIndex] = React.useState(0);
     const handleOpen = () => {
@@ -676,7 +676,7 @@ export default function Trials({treatmentId}) {
         <>
         <Grid container spacing={2}>
           <Grid item xs={8}>
-            <TreatmentList treatmentId={treatmentId}/>
+            <TreatmentList treatmentId={treatmentId} handleTreatmentChange={handleTreatmentChange}/>
           </Grid>
           <Grid item xs={4}>
             <Button onClick={handleOpen}>Filter</Button>

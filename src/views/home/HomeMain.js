@@ -20,7 +20,7 @@ const HomeMain = () => {
             <div className='home-main-left-button-group'>
               <Stack spacing={2}>
                 <ThemeProvider theme={buttonTheme}>
-                  <Button size='big' variant='contained' color='success'>Access your Health Risk</Button>
+                  <Button size='big' variant='contained' color='info'>Access your Health Risk</Button>
                   <Button size='big' variant='contained' color='info'>Explore Your Clinical Trials</Button>
                 </ThemeProvider>
               </Stack>

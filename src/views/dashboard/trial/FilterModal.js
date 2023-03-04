@@ -10,6 +10,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import { filterModalTheme } from '../../../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 const style = {
     position: 'absolute',
@@ -26,9 +27,9 @@ const style = {
 export default function FilterModal({openState, onCloseCallback}) {
 
     const handleClose = () => onCloseCallback();
+    const onApplyButtonClick =() => onCloseCallback();
     
     return (
-        <div>
           <Modal
             open={openState}
             onClose={handleClose}
@@ -75,12 +76,19 @@ export default function FilterModal({openState, onCloseCallback}) {
                         <TableCell> <FormControlLabel control={<Checkbox defaultChecked />} label="Surgery" /></TableCell>
                         <TableCell> <FormControlLabel control={<Checkbox defaultChecked />} label="Radiotherapy" /></TableCell>
                     </TableRow>
+                    <TableRow sx={{height: 5}}>
+                        {getFirstCell('')}
+                        <TableCell />
+                        <TableCell />
+                        <TableCell><Button size="small" variant="contained" color="info" onClick={onApplyButtonClick}>Apply</Button></TableCell>
+                    </TableRow>
                 </TableBody>
             </Table>
-            </ThemeProvider>
+            </ThemeProvider>            
           </TableContainer>
+
+         
           </Modal>
-        </div>
       );
     
 }

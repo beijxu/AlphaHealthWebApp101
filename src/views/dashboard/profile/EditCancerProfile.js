@@ -80,7 +80,7 @@ const EditCancerProfile = () => {
                 )
         }
         <p/>
-        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Biopsy result</Button>
+        <Button size="small" variant="outlined" color="info" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Biopsy result</Button>
         <p/>
 
         <div className='span-2-box'><u>History of prostate biopsies</u></div>
@@ -107,7 +107,7 @@ const EditCancerProfile = () => {
             )
         }        
         <p/>
-        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Tumor Staging result</Button>
+        <Button size="small" variant="outlined" color="info" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Tumor Staging result</Button>
         <p/>
 
         <div className='span-2-box'><u>History of prostate biopsies</u></div>
@@ -128,7 +128,7 @@ const EditCancerProfile = () => {
 
         ))}
         <p/>
-        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Treatment</Button>
+        <Button size="small" variant="outlined" color="info" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Treatment</Button>
         <p/>
 
         <div className='span-2-box'><u>History of serum PSA</u></div>
@@ -149,7 +149,7 @@ const EditCancerProfile = () => {
 
         ))}
         <p/>
-        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ PSA result</Button>
+        <Button size="small" variant="outlined" color="info" sx={{ paddingTop: 0, paddingBottom: 0}}>+ PSA result</Button>
         <p/>
         </ThemeProvider>
       </>
