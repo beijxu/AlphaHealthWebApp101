@@ -671,12 +671,12 @@ export default function Trials({treatmentId, handleTreatmentChange}) {
         pages.push(page);
     }
 
-
+    const selectedTreatmentId = treatmentId ? treatmentId : 't1';
     return (
         <>
         <Grid container spacing={2}>
           <Grid item xs={8}>
-            <TreatmentList treatmentId={treatmentId} handleTreatmentChange={handleTreatmentChange}/>
+            <TreatmentList treatmentId={selectedTreatmentId} handleTreatmentChange={handleTreatmentChange}/>
           </Grid>
           <Grid item xs={4}>
             <Button onClick={handleOpen}>Filter</Button>
