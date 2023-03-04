@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Dashboard from './Dashboard.tsx';
-import HealthProfile from './profile/HealthProfile.tsx';
+import { ProfileHome } from './profile/ProfileHome';
 
 
 const DashboardMain = () => {
@@ -14,7 +14,7 @@ const DashboardMain = () => {
             <Dashboard/>
           </Grid>
           <Grid item xs={5}>
-            <HealthProfile />
+            <ProfileHome />
           </Grid>
         </Grid>
       </div>

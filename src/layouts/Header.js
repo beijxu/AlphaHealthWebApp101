@@ -7,6 +7,8 @@ import Stack from '@mui/material/Stack';
 import { buttonTheme } from '../components/MUIOverrides';
 import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import Chip from '@mui/material/Chip';
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -56,12 +58,7 @@ const Header = ({
           </Grid>
         </Grid>
         <Grid item xs={3} className="header-button-box">
-          <Stack spacing={2} direction="row">
-            <ThemeProvider theme={buttonTheme}>
-              <Button size="small" variant="contained" color="success">Sign In</Button>
-              <Button size="small" variant="outlined" color="secondary">Sign Up!</Button>
-            </ThemeProvider>
-          </Stack>
+          <Chip label="John Smith" color="success"/>
         </Grid>
       </Grid>
     </div>

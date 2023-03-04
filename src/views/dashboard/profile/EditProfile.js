@@ -11,9 +11,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
-const EditProfile = () => {
-    // to move to props
-    const gleasonScores = [ ['3+4', '2020-09']];
+const EditProfile = ({onSaveCallback}) => {
     
     const [race, setRace] = useState('Black');
     const onRaceChange = (event) => {
@@ -28,6 +26,10 @@ const EditProfile = () => {
     const [sex, setSex] = useState('male');
     const onSexChange = (event) => {
         setSex(event.target.value);
+    }
+
+    const onSaveClick = () => {
+        onSaveCallback();
     }
 
     return (
@@ -91,11 +93,8 @@ const EditProfile = () => {
         <EditCancerProfile />
         <Divider />
         <p />
-        <SerumHistory />
-        <Divider />
-        <p />
         <ThemeProvider theme={buttonTheme}>
-              <Button size="small" variant="contained" color="success">Modify Profile</Button>
+              <Button size="small" variant="contained" color="success" onClick={onSaveClick}>Save Profile</Button>
         </ThemeProvider>
       </>
     );

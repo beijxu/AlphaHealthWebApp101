@@ -45,6 +45,16 @@ const EditCancerProfile = () => {
             treatmentDate: '2021-01',
           },
         ],
+        psaHistory: [
+            {
+                psa: 200,
+                date: '2020-01',
+            },
+            {
+                psa: 300,
+                date: '2022-01'
+            }
+        ]
     }
 
     return (
@@ -52,37 +62,44 @@ const EditCancerProfile = () => {
       <ThemeProvider theme={healthProfileInputTheme}>
         <b>Prostate cancer</b>
         <p/>
+        <div className='span-2-box'><u>History of prostate biopsies</u></div>
+        <p/>
         {
             cancerProfile.gleasonHistory.map(item => 
                 <div className='span-2-box'>
                     <span>Gleason score: <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.score} /></span>
-                    <span>                    <LocalizationProvider dateAdapter={AdapterDayjs}>  
-                    <MobileDatePicker
-          inputFormat="MM/DD/YYYY"
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        /></LocalizationProvider></span>
+                    <span><LocalizationProvider dateAdapter={AdapterDayjs}>  
+                            <MobileDatePicker
+                                inputFormat="MM/DD/YYYY"
+                                value={value}
+                                onChange={handleChange}
+                                renderInput={(params) => <TextField {...params} />}
+                                />
+                            </LocalizationProvider>
+                    </span>
                 </div>
                 )
         }
         <p/>
         <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Biopsy result</Button>
         <p/>
+
+        <div className='span-2-box'><u>History of prostate biopsies</u></div>
+        <p/>
         {
             cancerProfile.tumorHistory.map(item => 
                 <>
                 <div className='span-2-box '>
                     <span>tumor stage (TNM)</span>
-                    <span>  
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>  
-                    <MobileDatePicker
-          inputFormat="MM/DD/YYYY"
-          value={value}
-          onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
-        /></LocalizationProvider>
-</span>
+                    <span><LocalizationProvider dateAdapter={AdapterDayjs}>  
+                            <MobileDatePicker
+                                inputFormat="MM/DD/YYYY"
+                                value={value}
+                                onChange={handleChange}
+                                renderInput={(params) => <TextField {...params} />}
+                                />
+                        </LocalizationProvider>
+                    </span>
                 </div>
                 <div className='indentation-small'>T (primary tumor): <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.tumorStageT}/></div>
                 <div className='indentation-small'>N (pelvic lymph node):  <TextField sx={{width: '100px'}} id="outlined-start-adornment" defaultValue={item.tumorStageN}/></div>
@@ -93,13 +110,48 @@ const EditCancerProfile = () => {
         <p/>
         <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Tumor Staging result</Button>
         <p/>
+
+        <div className='span-2-box'><u>History of prostate biopsies</u></div>
+        <p/>
         {cancerProfile.treatmentHistory.map((row) => (
             <div className='span-2-box indentation-small'>
                   <span>{row.treatment}</span>
-                  <span>{row.treatmentDate}</span>
+                  <span><LocalizationProvider dateAdapter={AdapterDayjs}>  
+                            <MobileDatePicker
+                                inputFormat="MM/DD/YYYY"
+                                value={value}
+                                onChange={handleChange}
+                                renderInput={(params) => <TextField {...params} />}
+                                />
+                            </LocalizationProvider>
+                </span>
             </div>
 
         ))}
+        <p/>
+        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ Treatment</Button>
+        <p/>
+
+        <div className='span-2-box'><u>History of serum PSA</u></div>
+        <p/>
+        {cancerProfile.psaHistory.map((row) => (
+            <div className='span-2-box indentation-small'>
+                  <span>{row.psa} ng/ml</span>
+                  <span><LocalizationProvider dateAdapter={AdapterDayjs}>  
+                            <MobileDatePicker
+                                inputFormat="MM/DD/YYYY"
+                                value={value}
+                                onChange={handleChange}
+                                renderInput={(params) => <TextField {...params} />}
+                                />
+                            </LocalizationProvider>
+                </span>
+            </div>
+
+        ))}
+        <p/>
+        <Button size="small" variant="outlined" color="success" sx={{ paddingTop: 0, paddingBottom: 0}}>+ PSA result</Button>
+        <p/>
         </ThemeProvider>
       </>
     );

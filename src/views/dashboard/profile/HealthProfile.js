@@ -8,11 +8,15 @@ import Button from '@mui/material/Button';
 import EditProfile from './EditProfile';
 
 
-const HealthProfile = () => {
+const HealthProfile = ({onModifyCallback}) => {
     const age = 62;
     const sex = 'male';
     const race = 'black';
     const maritalStatus = 'married';
+
+    const onModifyClick = () => {
+      onModifyCallback();
+    }
     return (
       <>
         <b>Your health profile</b>
@@ -38,9 +42,8 @@ const HealthProfile = () => {
         <Divider />
         <p />
         <ThemeProvider theme={buttonTheme}>
-              <Button size="small" variant="contained" color="success">Modify Profile</Button>
+              <Button size="small" variant="contained" color="success" onClick={onModifyClick}>Modify Profile</Button>
         </ThemeProvider>
-        <EditProfile />
       </>
     );
   }
