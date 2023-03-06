@@ -14,48 +14,55 @@ const getGroupAssignmentText = (count) => {
     return `There are ${count} groups. Participants will be assigned randomly to one of the groups below.`
 } 
 
+const buildInstitution = (location) => {
+    return `${location.instituteName},${location.locationCity},${location.locationState}`
+}
+
 export default function Trial({trial}) {
-    const firstStudy = trial.studies[0];
-    const restStudies = trial.studies.length > 1 ? trial.studies.slice(1 - trial.studies.length) : undefined;
+
+    const validInstitutions = trial.trialLocations.filter(location => location.locationStatus === trial.trialStatus.overallStatus);
+    const firstInstitution = validInstitutions[0];
+    const restInstitutions = validInstitutions.length > 1 ? validInstitutions.slice(1 - validInstitutions.length) : undefined;
+    const institutionLabel = validInstitutions.length > 1 ? 'Institutions:' : 'Institution';
     return (   
         <>
-        <Chip label={trial.status} size="small" />&nbsp;&nbsp;
+        <Chip label={trial.trialStatus.overallStatus} size="small" />&nbsp;&nbsp;
         <Chip label={trial.studyType} size="small" />&nbsp;&nbsp;
-        <Chip label={'Phase ' + trial.phase} size="small" />&nbsp;&nbsp;
-        <Chip label={trial.treatmentType} size="small" />
+        <Chip label={trial.studyPhase} size="small" />&nbsp;&nbsp;
+        <Chip label={trial.treatmentDetails.treatmentType} size="small" />
         <p/>
         <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableBody>
             <TableRow sx={{height: 5}}>
                 {getFirstCell('Treatments studied:')}
-              <TableCell sx={{border: 0, padding: 0}}>{firstStudy.type}:{firstStudy.study}</TableCell>
+              <TableCell sx={{border: 0, padding: 0}}>{trial.treatmentDetails.treatmentStudied}</TableCell>
             </TableRow>
-            {restStudies && restStudies.map(study => (
+            <TableRow sx={{height: 5}}>
+                {getFirstCell(institutionLabel)}
+                <TableCell sx={{border: 0, padding: 0}}>{buildInstitution(firstInstitution)}</TableCell>
+            </TableRow>
+            {restInstitutions && restInstitutions.map(institution => (
                 <>
               {getFirstCell("")}
-              <TableCell sx={{border: 0, padding: 0}}>{study.type}:{study.study}</TableCell>
+              <TableCell sx={{border: 0, padding: 0}}>{buildInstitution(institution)}</TableCell>
               </>
             ))}
-            <TableRow sx={{height: 5}}>
-                {getFirstCell('Institution:')}
-                <TableCell sx={{border: 0, padding: 0}}>{trial.institution}</TableCell>
-            </TableRow>
             <TableRow key="empty row as a line break" sx={{height: 5}}>
                 {getFirstCell("")}
                 <TableCell sx={{border: 0, padding: 0}}>&nbsp;</TableCell>
             </TableRow>
             <TableRow sx={{height: 5}}>
                 {getFirstCell('Participant groups:')}
-                <TableCell sx={{border: 0, padding: 0}}>{getGroupAssignmentText(trial.groups.length)}</TableCell>
+                <TableCell sx={{border: 0, padding: 0}}>{getGroupAssignmentText(trial.studyGroups.length)}</TableCell>
             </TableRow>
 
             {
-                [...Array(trial.groups.length).keys()].map(index =>             
+                trial.studyGroups.map(group => (
                 <TableRow sx={{height: 30}}>
-                    {getFirstCell(<b>group {index}:</b>)}
-                    <TableCell sx={{border: 0, padding: 0}}><Chip label={trial.groups[index].groupName} size="small" /></TableCell>
-                </TableRow>)
+                    {getFirstCell(group.groupId)}
+                    <TableCell sx={{border: 0, padding: 0}}><Chip label={`${group.groupDescription}.${group.groupIntervention}`} size="small" /></TableCell>
+                </TableRow>))
             }
 
         </TableBody>
