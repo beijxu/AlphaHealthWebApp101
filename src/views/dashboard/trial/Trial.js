@@ -19,9 +19,10 @@ const buildInstitution = (location) => {
 }
 
 export default function Trial({trial}) {
+    console.log(trial);
 
     const validInstitutions = trial.trialLocations.filter(location => location.locationStatus === trial.trialStatus.overallStatus);
-    const firstInstitution = validInstitutions[0];
+    const firstInstitution = validInstitutions.length >= 1? validInstitutions[0] : trial.trialLocations[0];
     const restInstitutions = validInstitutions.length > 1 ? validInstitutions.slice(1 - validInstitutions.length) : undefined;
     const institutionLabel = validInstitutions.length > 1 ? 'Institutions:' : 'Institution';
     return (   
