@@ -16,9 +16,16 @@ export default function Demographics({profile, handleProfileUpdate}) {
 
     const [birthdayValue, setBirthDayValue] = React.useState(profile.demographics.birthday ? dayjs(profile.demographics.birthday) : null);
     const [sex, setSex] = React.useState(profile.demographics.sex ? profile.demographics.sex : 'male');
+    const [changed, setChanged] = React.useState(false);
 
     const handleChange = (event, value) => {
         setSex(value);
+        setChanged(true);
+    }
+
+    const handleBirthdayChanged = (newValue) => {
+        setBirthDayValue(newValue);
+        setChanged(true);
     }
 
     const onClickSave = () => {
@@ -28,12 +35,15 @@ export default function Demographics({profile, handleProfileUpdate}) {
                 sex: sex,
             },
         })
+        setChanged(false);
     }
 
     const onClickCancel = () => {
         setBirthDayValue(profile.demographics.birthday ? dayjs(profile.demographics.birthday) : null);
         setSex(profile.demographics.sex ? profile.demographics.sex : 'male');
+        setChanged(false);
     }
+
     return (
     <Box sx={{ width: '100%', maxWidth: '800px'}}>
       <Typography variant="body1" gutterBottom>
@@ -48,7 +58,7 @@ export default function Demographics({profile, handleProfileUpdate}) {
                                 inputFormat="MM/DD/YYYY"
                                 value={birthdayValue}
                                 disableFuture
-                                onChange={(newValue) => setBirthDayValue(newValue)}
+                                onChange={(newValue) => handleBirthdayChanged(newValue)}
                                 renderInput={(params) => <TextField {...params} /> }
                                 sx={{ 'input': {height: '10px'}}}
                                 />
@@ -77,6 +87,7 @@ export default function Demographics({profile, handleProfileUpdate}) {
             </Grid>
         </div>
       </Typography>
+      { changed && <>
       <p/>
       <Divider />
       <p/>
@@ -88,6 +99,7 @@ export default function Demographics({profile, handleProfileUpdate}) {
                 <Button size="large" variant="outlined" onClick={onClickCancel}>Cancel</Button>
             </Grid>
        </Grid>
+       </>}
       
     </Box>
     )
