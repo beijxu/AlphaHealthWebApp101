@@ -24,10 +24,13 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const drawerWidth = 240;
 
-const profile = {
+let profile = {
   demographics: {
     birthday: null,
     sex: 'male'
+  },
+  conditions: {
+    key: 1
   }
 }
 
@@ -38,10 +41,15 @@ export default function PermanentDrawerLeft() {
     setSelectedNav(text);
   }
 
+  const handleProfileUpdate = (newProfile) => {
+    profile = Object.assign(profile, newProfile);
+    console.log(profile);
+  }
+
   const conditionalRendering = () => {
     switch (selectedNav) {
       case 'Demographics':
-        return <Demographics profile={profile} />
+        return <Demographics profile={profile} handleProfileUpdate={handleProfileUpdate} />
       case 'Conditions':
         return <Conditions />
       case 'Lab Tests': 
