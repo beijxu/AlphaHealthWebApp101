@@ -24,6 +24,13 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 const drawerWidth = 240;
 
+const profile = {
+  demographics: {
+    birthday: null,
+    sex: 'male'
+  }
+}
+
 export default function PermanentDrawerLeft() {
   const [selectedNav, setSelectedNav] = React.useState('Demographics');
 
@@ -34,7 +41,7 @@ export default function PermanentDrawerLeft() {
   const conditionalRendering = () => {
     switch (selectedNav) {
       case 'Demographics':
-        return <Demographics />
+        return <Demographics profile={profile} />
       case 'Conditions':
         return <Conditions />
       case 'Lab Tests': 
@@ -98,9 +105,8 @@ export default function PermanentDrawerLeft() {
       </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3, marginLeft: '100px'}}
       >
-        <Toolbar />
         {conditionalRendering()}
       </Box>
     </Box>
