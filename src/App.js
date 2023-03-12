@@ -10,6 +10,7 @@ import LayoutDefault from './layouts/LayoutDefault';
 import Home from './views/home/Home';
 import DashboardMain from './views/dashboard/DashboardMain';
 import APICallExample from './APICallExample';
+import ProfileMain from './views/profile/ProfileMain';
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -33,6 +34,7 @@ const App = () => {
       <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
       <AppRoute exact path="/dashboard" component={DashboardMain} layout={LayoutDefault} />
       <AppRoute exact path="/api" component={APICallExample}/>
+      <AppRoute exact path="/profile" component={ProfileMain} layout={LayoutDefault}/>
     </Switch>
   );
 }

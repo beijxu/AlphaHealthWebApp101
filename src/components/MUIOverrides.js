@@ -88,7 +88,7 @@ export const healthProfileInputTheme = createTheme({
       }
     }
   },
-})
+});
 
 export const linkStyleButton = createTheme({
   components: {
@@ -102,4 +102,28 @@ export const linkStyleButton = createTheme({
       },
     },
   },
-})
+});
+
+export const muiPaperTheme = createTheme({
+  MuiToolbar: {
+    root: {
+      display: 'block'
+    }
+  },
+  MuiPaper: {
+    root: {
+      top: 700,
+      display: 'none'
+    }
+  },
+  MuiDrawer: {
+    paper: {
+      top: 700
+    }
+  },
+  MuiToolbar: {
+    gutters: {
+      display: 'none'
+    },
+  }
+});
